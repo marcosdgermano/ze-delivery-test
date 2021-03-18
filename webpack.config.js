@@ -17,6 +17,10 @@ module.exports = {
         options: {
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
+      },
+      {
+        test: /\.(graphql|gql)$/,
+        loader: require.resolve('graphql-tag/loader'),
       }
     ]
   },
