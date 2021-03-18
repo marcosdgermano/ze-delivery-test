@@ -1,6 +1,7 @@
 module.exports = {
   verbose: true,
-  collectCoverageFrom: ['./src/*.js', './src/**/*.js'],
+  setupFiles: ['./jest.setup.js'],
+  collectCoverageFrom: ['./src/*.js', './src/**/*.js', '!src/index.js'],
   coverageThreshold: {
     './src/**': {
       branches: 80,
@@ -12,4 +13,5 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
+  snapshotSerializers: ['enzyme-to-json/serializer'],
 };
