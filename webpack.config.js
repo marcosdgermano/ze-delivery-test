@@ -6,7 +6,8 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -20,6 +21,9 @@ module.exports = {
         loader: require.resolve('graphql-tag/loader'),
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   },
 
   plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/public', 'index.html') })]
