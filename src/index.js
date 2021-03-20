@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import { Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import { client as apolloClient } from './utils/graphql-client';
+import GlobalStyle from './utils/global-style';
 import history from './utils/history';
 import Home from './pages/home';
 import Products from './pages/products';
 
 const App = () => (
   <ApolloProvider client={apolloClient}>
+    <GlobalStyle />
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={Home} />

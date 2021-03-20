@@ -19,12 +19,12 @@ module.exports = {
       {
         test: /\.(graphql|gql)$/,
         loader: require.resolve('graphql-tag/loader'),
-      }
-    ]
+      },
+    ],
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
-  plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/public', 'index.html') })]
+  plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') })],
 };
