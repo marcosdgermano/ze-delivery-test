@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   body {
     color: #666;
+    margin: 0;
     background: '#f1f1f1';
     font-family: 'Roboto';
     -webkit-font-smoothing: antialiased;
