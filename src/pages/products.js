@@ -1,8 +1,8 @@
 import React from 'react';
-import Title from '../components/test-component';
+import ProductsList from '../components/products';
 
 const Products = () => (
-  <Title>Welcome home, Marcos!!!!</Title>
+  <ProductsList />
 );
 
 export default Products;

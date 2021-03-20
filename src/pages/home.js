@@ -1,9 +1,7 @@
 import React from 'react';
-import Title from '../components/test-component';
-import { Link } from 'react-router-dom';
 
 const Home = () => (
-  <Title><Link to="/produtos">Welcome home, Erick!!!!</Link></Title>
+  <a href="/produtos">Welcome home, Erick!!!!</a>
 );
 
 export default Home;

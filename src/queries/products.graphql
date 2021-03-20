@@ -1,0 +1,36 @@
+query getProducts($id: ID!){
+    poc(id: $id) {
+      id
+      products {
+        id
+        title
+        rgb
+        images {
+          url
+        }
+        productVariants {
+          availableDate
+          productVariantId
+          price
+          inventoryItemId
+          shortDescription
+          title
+          published
+          volume
+          volumeUnit
+          description
+          subtitle
+          components {
+            id
+            productVariantId
+            productVariant {
+              id
+              title
+              description
+              shortDescription
+            }
+          }
+        }
+      }
+    }
+  }
