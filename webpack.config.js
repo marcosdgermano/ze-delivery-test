@@ -20,6 +20,10 @@ module.exports = {
         test: /\.(graphql|gql)$/,
         loader: require.resolve('graphql-tag/loader'),
       },
+      {
+        test: /\.svg$/,
+        loader: require.resolve('@svgr/webpack'),
+      },
     ],
   },
   devServer: {
