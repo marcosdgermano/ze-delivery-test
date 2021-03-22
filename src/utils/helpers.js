@@ -24,3 +24,16 @@ export const formatMoney = number => {
   number = formatNumber(number);
   return number ? `R$ ${number}` : '';
 };
+
+export const setCookie = (name, value) => {
+  document.cookie = `${name}=${value || ''};`;
+};
+
+export const getCookie = name => {
+  const cookies = document.cookie.split('; ');
+  const cookiesList = cookies.map(c => {
+    const cookieValues = c.split('=');
+    return { [cookieValues[0]]: cookieValues[1] };
+  });
+  return cookiesList[name];
+};

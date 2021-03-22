@@ -1,16 +1,39 @@
 import React from 'react';
+import { useLazyQuery } from '@apollo/client';
 import get from 'lodash/get';
-import { useQuery } from '@apollo/client';
 import { pocSearchMethod } from '../queries/poc.graphql';
-import { getProducts } from '../queries/products.graphql';
+import { getGeoLocation } from './location';
+import { setCookie } from '../utils/helpers';
 
 export const withPoc = Component => props => {
-  const { data: pocData, error: pocError, loading: pocLoading } = useQuery(pocSearchMethod);
-  const { data, error, loading } = useQuery(getProducts, {
-    variables: {
-      id: get(pocData, ['pocSearch', '0', 'id']),
-    },
-  });
+  const [fetchDistributor, { data, error, loading }] = useLazyQuery(pocSearchMethod);
 
-  return <Component data={data} error={pocError || error} loading={loading || pocLoading} {...props} />;
+  if (data) {
+    const pocId = get(data, ['pocSearch', '0', 'id']);
+    setCookie('pocId', pocId);
+    props.history.push('/produtos');
+  }
+
+  const getPoc = async address => {
+    const location = await getGeoLocation(address);
+
+    if (!location) {
+      return null;
+    }
+
+    const { lat, lng: long } = location;
+
+    fetchDistributor({
+      variables: {
+        algorithm: 'NEAREST',
+        lat,
+        long,
+        now: Date.now,
+      },
+    });
+  };
+
+  return <Component getPoc={getPoc} data={data} error={error} loading={loading} {...props} />;
 };
+
+export default withPoc;
