@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { withPoc } from '../services/poc';
 import ProductCard from './product-card';
 
 const ProductList = ({ data, loading, error }) => {
@@ -35,4 +34,4 @@ const List = styled.div`
   flex-wrap: wrap;
 `;
 
-export default withPoc(ProductList);
+export default ProductList;

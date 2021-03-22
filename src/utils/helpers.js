@@ -35,5 +35,7 @@ export const getCookie = name => {
     const cookieValues = c.split('=');
     return { [cookieValues[0]]: cookieValues[1] };
   });
-  return cookiesList[name];
+  console.log('cookies >>>>>>', cookiesList.find(c => c[name])[name]);
+  const cookie = cookiesList.find(c => c[name])[name];
+  return cookie;
 };
