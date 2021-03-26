@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import withPoc from '../../services/poc';
 import AddressField from './address-field';
-import Loading from './loading';
+import Loading from '../../components/loading';
 
 const Home = ({ getPoc, loading, error }) => (
   <Page>

@@ -1,7 +1,7 @@
-query getProducts($id: ID!){
+query getProducts($id: ID!,  $categoryId: Int){
     poc(id: $id) {
       id
-      products {
+      products(categoryId: $categoryId) {
         id
         title
         rgb

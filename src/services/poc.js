@@ -8,7 +8,7 @@ import { setCookie } from '../utils/helpers';
 export const withPoc = Component => props => {
   const [fetchDistributor, { data, error, loading }] = useLazyQuery(pocSearchMethod);
 
-  if (data) {
+  if (data && data.pocSearch.length > 0) {
     const pocId = get(data, ['pocSearch', '0', 'id']);
     setCookie('pocId', pocId);
     props.history.push('/produtos');

@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #666;
     margin: 0;
-    background: '#f1f1f1';
+    background-color: #EAEAEA;
     font-family: 'Roboto';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
