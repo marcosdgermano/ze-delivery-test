@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkedinSVG from '../../../public/assets/linkedin.svg';
-import TwitterSVG from '../../../public/assets/twitter.svg';
+import LinkedinSVG from '../../public/assets/linkedin.svg';
+import TwitterSVG from '../../public/assets/twitter.svg';
 
 const Footer = () => (
   <Wrapper>

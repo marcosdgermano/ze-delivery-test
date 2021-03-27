@@ -17,7 +17,7 @@ const LoadingUI = styled.div`
   }
   &:after {
     border-width: 4px;
-    border: 2px solid ${({ secondColor }) => secondColor && `#ffcc04`};
+    border: 2px solid;
     animation: rotate 500ms infinite linear;
     border-radius: 100%;
     border-right-color: transparent;
