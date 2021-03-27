@@ -26,12 +26,16 @@ const App = () => {
         <Header />
         <Page>
           <Switch>
-            <Route path="/" exact>
-              {hasPocId ? <Redirect to="/produtos" /> : <Home />}
-            </Route>
-            <Route path="/produtos" exact>
-              {hasPocId ? <Products /> : <Redirect to="/" />}
-            </Route>
+            <Route
+              path="/"
+              exact
+              render={({ history }) => (hasPocId ? <Redirect to="/produtos" /> : <Home history={history} />)}
+            />
+            <Route
+              path="/produtos"
+              exact
+              render={({ history }) => (!hasPocId ? <Redirect to="/" /> : <Products history={history} />)}
+            />
           </Switch>
         </Page>
         <Footer />
