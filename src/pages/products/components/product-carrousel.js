@@ -1,23 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProductCard from './product-card';
-import Loading from './loading';
-import { withProducts } from '../services/products';
+import Loading from '../../../components/loading';
+import { withProducts } from '../../../services/products';
+import { getCart } from '../../../services/cart';
 
 const Content = ({ products }) => {
   if (products.length < 1) {
     return <NoProducts>Sem produtos para esta categoria</NoProducts>;
   }
 
+  const cart = getCart();
+
   return (
     <List>
       {products.map(({ id, images, productVariants }) => (
-        <ProductCard
-          key={`product-${id}`}
-          image={images[0].url}
-          name={productVariants[0].title}
-          price={productVariants[0].price}
-        />
+        <>
+          <ProductCard
+            id={id}
+            isSelected={cart.includes(id)}
+            key={`product-${id}`}
+            image={images[0].url}
+            name={productVariants[0].title}
+            price={productVariants[0].price}
+          />
+        </>
       ))}
     </List>
   );

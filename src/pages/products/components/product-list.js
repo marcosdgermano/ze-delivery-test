@@ -8,11 +8,9 @@ const ProductList = ({ data, loading, error }) => {
   }
 
   if (error || !data) {
-    console.log('error >>>>>>>>', error);
     return <h1>DEU MERDA</h1>;
   }
 
-  console.log('data >>>>>>>>', data);
   const { products } = data.poc;
   return (
     <List>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProductCard from '../index';
+import ProductCard from '../product-card';
 
 describe('<ProductCard />', () => {
   const props = {

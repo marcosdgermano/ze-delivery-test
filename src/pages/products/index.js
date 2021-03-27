@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductsCarrousel from '../../components/product-carrousel';
+import ProductsCarrousel from './components/product-carrousel';
 import { withCategories } from '../../services/products';
 import Loading from '../../components/loading';
 

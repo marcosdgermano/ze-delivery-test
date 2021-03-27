@@ -31,10 +31,12 @@ export const setCookie = (name, value) => {
 
 export const getCookie = name => {
   const cookies = document.cookie.split('; ');
-  const cookiesList = cookies.map(c => {
+  let cookiesList = {};
+
+  cookies.forEach(c => {
     const cookieValues = c.split('=');
-    return { [cookieValues[0]]: cookieValues[1] };
+    cookiesList = { ...cookiesList, [cookieValues[0]]: cookieValues[1] };
   });
-  const cookie = cookiesList.find(c => c[name])[name];
-  return cookie;
+
+  return cookiesList[name];
 };
