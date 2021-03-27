@@ -52,7 +52,7 @@ const ProductCarrousel = ({ data, loading, error, categoryTitle }) => {
 };
 
 const Title = styled.h2`
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 3em;
   }
 `;
@@ -61,7 +61,7 @@ const NoProducts = styled.p`
   text-align: center;
   font-size: 45px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 3em;
   }
 `;
@@ -74,7 +74,7 @@ const List = styled.div`
   @media (max-width: 1200px) and (min-width: 1024px) {
     grid-template-columns: 21% 21% 21% 21% 21%;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

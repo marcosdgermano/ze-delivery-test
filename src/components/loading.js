@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Loading = () => <LoadingUI />;
+const Loading = props => <LoadingUI {...props} />;
 
 const LoadingUI = styled.div`
   margin: 25px;
@@ -17,7 +17,7 @@ const LoadingUI = styled.div`
   }
   &:after {
     border-width: 4px;
-    border: 2px solid ${({ theme }) => theme.primaryColor};
+    border: 2px solid ${({ secondColor }) => secondColor && `#ffcc04`};
     animation: rotate 500ms infinite linear;
     border-radius: 100%;
     border-right-color: transparent;

@@ -6,6 +6,7 @@ import { getCookie } from '../utils/helpers';
 
 export const withCategories = Component => props => {
   const { data, error, loading } = useQuery(allCategoriesSearch);
+  console.log('error >>>>>', error);
 
   return <Component data={data} error={error} loading={loading} {...props} />;
 };

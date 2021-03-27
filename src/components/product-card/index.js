@@ -22,7 +22,7 @@ const Card = styled.div`
   flex-direction: column;
   background-color: #fff;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     min-width: 250px;
     height: 420px;
   }
@@ -41,7 +41,7 @@ const Image = styled.img`
   height: 100px;
   margin: 10px auto;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     height: 200px;
   }
 `;
@@ -55,7 +55,7 @@ const Name = styled.h3`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 2em;
   }
 `;
@@ -63,7 +63,7 @@ const Name = styled.h3`
 const Price = styled.span`
   font-weight: bold;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     font-size: 2em;
   }
 `;
