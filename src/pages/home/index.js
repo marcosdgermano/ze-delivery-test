@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import withPoc from '../../services/poc';
-import AddressField from './address-field';
+import AddressField from './components/address-field';
 import Loading from '../../components/loading';
 
 const Home = ({ getPoc, loading, error }) => (
@@ -17,9 +17,12 @@ const Home = ({ getPoc, loading, error }) => (
 const FieldContainer = styled.div`
   padding-top: 300px;
   margin: 0 auto;
-  width: 35vw;
   min-width: 350px;
   max-width: 700px;
+
+  @media (min-width: 1024px) {
+    width: 35vw;
+  }
 `;
 
 const Page = styled.div`

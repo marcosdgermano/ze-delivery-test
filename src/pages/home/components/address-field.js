@@ -41,6 +41,11 @@ const TextInput = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 1023px) {
+    padding: 25px;
+    font-size: 40px;
+  }
 `;
 
 const Flexbox = styled.div`
@@ -67,6 +72,11 @@ const Button = styled.button`
 
   :focus {
     outline-color: #e61213;
+  }
+
+  @media (max-width: 1023px) {
+    width: 100px;
+    font-size: 40px;
   }
 `;
 

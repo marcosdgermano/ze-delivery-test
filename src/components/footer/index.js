@@ -32,12 +32,20 @@ const Footer = () => (
 const Title = styled.h2`
   color: #fff;
   font-size: 1.2em;
+
+  @media (max-width: 1023px) {
+    font-size: 2.3em;
+  }
 `;
 
 const Link = styled.a`
   color: #fff;
   display: block;
   line-height: 2em;
+
+  @media (max-width: 1023px) {
+    font-size: 2em;
+  }
 `;
 
 const SocialWrapper = styled.div`
