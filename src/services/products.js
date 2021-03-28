@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash/get';
 import { useQuery } from '@apollo/client';
 import { getProducts } from '../queries/products.graphql';
 import { allCategoriesSearch } from '../queries/categories.graphql';
@@ -19,6 +20,7 @@ export const withProducts = Component => props => {
       categoryId,
     },
   });
+  const products = get(data, ['poc', 'products'], []);
 
-  return <Component data={data} error={error} loading={loading} {...props} />;
+  return <Component products={products} error={error} loading={loading} {...props} />;
 };

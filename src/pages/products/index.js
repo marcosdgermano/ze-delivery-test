@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductsCarrousel from './components/product-carrousel';
+import ProductsCarousel from './components/product-carousel';
 import { withCategories } from '../../services/products';
 import Loading from '../../components/loading';
 
@@ -29,7 +29,7 @@ const Products = ({ data, error, loading }) => {
     <PageContainer>
       <ProductsContainer>
         {allCategory.map(({ id, title }) => (
-          <ProductsCarrousel key={`category-products-${id}`} categoryId={id} categoryTitle={title} />
+          <ProductsCarousel key={`category-products-${id}`} categoryId={id} categoryTitle={title} />
         ))}
       </ProductsContainer>
     </PageContainer>

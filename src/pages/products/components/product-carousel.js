@@ -5,32 +5,7 @@ import Loading from '../../../components/loading';
 import { withProducts } from '../../../services/products';
 import { getCart } from '../../../services/cart';
 
-const Content = ({ products }) => {
-  if (products.length < 1) {
-    return <NoProducts>Sem produtos para esta categoria</NoProducts>;
-  }
-
-  const cart = getCart();
-
-  return (
-    <List>
-      {products.map(({ id, images, productVariants }) => (
-        <>
-          <ProductCard
-            id={id}
-            isSelected={cart.includes(id)}
-            key={`product-${id}`}
-            image={images[0].url}
-            name={productVariants[0].title}
-            price={productVariants[0].price}
-          />
-        </>
-      ))}
-    </List>
-  );
-};
-
-const ProductCarrousel = ({ data, loading, error, categoryTitle }) => {
+export const ProductCarousel = ({ products, loading, error, categoryTitle }) => {
   if (loading) {
     return (
       <div>
@@ -40,7 +15,7 @@ const ProductCarrousel = ({ data, loading, error, categoryTitle }) => {
     );
   }
 
-  if (error || !data) {
+  if (error || products?.length < 1) {
     return (
       <div>
         <Title>{categoryTitle}</Title>
@@ -49,11 +24,24 @@ const ProductCarrousel = ({ data, loading, error, categoryTitle }) => {
     );
   }
 
-  const { products } = data.poc;
+  const cart = getCart();
+
   return (
     <div>
       <Title>{categoryTitle}</Title>
-      <Content products={products} loading />
+      <List>
+        {products.map(({ id, images, productVariants }) => (
+          <li key={`product-${id}`}>
+            <ProductCard
+              id={id}
+              isSelected={cart.includes(id)}
+              image={images[0].url}
+              name={productVariants[0].title}
+              price={productVariants[0].price}
+            />
+          </li>
+        ))}
+      </List>
     </div>
   );
 };
@@ -73,7 +61,7 @@ const NoProducts = styled.p`
   }
 `;
 
-const List = styled.div`
+const List = styled.ul`
   display: grid;
   grid-template-columns: 18% 18% 18% 18% 18%;
   justify-content: center;
@@ -90,4 +78,4 @@ const List = styled.div`
   }
 `;
 
-export default withProducts(ProductCarrousel);
+export default withProducts(ProductCarousel);
