@@ -11,6 +11,7 @@ module.exports = {
     },
   },
   transform: {
+    '^.+\\.graphql$': 'jest-transform-graphql',
     '^.+\\.js$': 'babel-jest',
     '\\.svg$': './fileTransformer.js',
   },
