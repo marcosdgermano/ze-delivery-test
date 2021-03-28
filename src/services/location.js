@@ -10,6 +10,6 @@ export const getGeoLocation = async address => {
 
     return get(result, ['results', '0', 'geometry', 'location']);
   } catch (e) {
-    console.log('error >>>>>>>>', e);
+    throw new Error(e);
   }
 };
