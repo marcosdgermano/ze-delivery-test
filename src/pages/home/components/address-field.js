@@ -18,7 +18,7 @@ export const AddressField = ({ onSubmit }) => {
   return (
     <Flexbox>
       <Cell>
-        <TextInput name="cep" placeholder="digite o CEP" onChange={handleChange} value={value} />
+        <TextInput name="address" placeholder="digite seu endereço" onChange={handleChange} value={value} />
       </Cell>
       <Cell auto>
         <Button onClick={onClick}>ok</Button>
