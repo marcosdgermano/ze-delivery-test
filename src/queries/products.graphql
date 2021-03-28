@@ -1,35 +1,13 @@
 query getProducts($id: ID!,  $categoryId: Int){
     poc(id: $id) {
-      id
       products(categoryId: $categoryId) {
         id
-        title
-        rgb
         images {
           url
         }
         productVariants {
-          availableDate
-          productVariantId
           price
-          inventoryItemId
-          shortDescription
           title
-          published
-          volume
-          volumeUnit
-          description
-          subtitle
-          components {
-            id
-            productVariantId
-            productVariant {
-              id
-              title
-              description
-              shortDescription
-            }
-          }
         }
       }
     }

@@ -4,7 +4,7 @@ import ProductsCarousel from './components/product-carousel';
 import { withCategories } from '../../services/products';
 import Loading from '../../components/loading';
 
-const Products = ({ data, error, loading }) => {
+const Products = ({ categories, error, loading }) => {
   if (loading) {
     return (
       <PageContainer>
@@ -15,7 +15,7 @@ const Products = ({ data, error, loading }) => {
     );
   }
 
-  if (error || !data || !data.allCategory) {
+  if (error || categories?.length < 1) {
     return (
       <PageContainer>
         <ErrorMessage>Ocorreu um erro, tente novamente mais tarde!</ErrorMessage>
@@ -23,12 +23,10 @@ const Products = ({ data, error, loading }) => {
     );
   }
 
-  const { allCategory } = data;
-
   return (
     <PageContainer>
       <ProductsContainer>
-        {allCategory.map(({ id, title }) => (
+        {categories.map(({ id, title }) => (
           <ProductsCarousel key={`category-products-${id}`} categoryId={id} categoryTitle={title} />
         ))}
       </ProductsContainer>
