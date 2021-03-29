@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Products } from './index';
+import { Products } from '../index';
 
 describe('<Products />', () => {
   const categories = [
