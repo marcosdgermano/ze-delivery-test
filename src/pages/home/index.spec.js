@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Home from './index';
+import { Home } from './index';
 
 describe('<Home />', () => {
   it('Render component', () => {

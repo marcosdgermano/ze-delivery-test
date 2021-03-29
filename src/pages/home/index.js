@@ -4,7 +4,7 @@ import withPoc from '../../services/poc';
 import AddressField from './components/address-field';
 import Loading from '../../components/loading';
 
-const Home = ({ getPoc, loading, error, pocId, history }) => {
+export const Home = ({ getPoc, loading, error, pocId, history }) => {
   if (pocId) {
     history.push('/produtos', { pocId });
   }

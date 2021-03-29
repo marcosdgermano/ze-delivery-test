@@ -4,7 +4,7 @@ import ProductsCarousel from './components/product-carousel';
 import { withCategories } from '../../services/products';
 import Loading from '../../components/loading';
 
-const Products = ({ categories, error, loading }) => {
+export const Products = ({ categories, error, loading }) => {
   if (loading) {
     return (
       <PageContainer>
@@ -27,14 +27,16 @@ const Products = ({ categories, error, loading }) => {
     <PageContainer>
       <ProductsContainer>
         {categories.map(({ id, title }) => (
-          <ProductsCarousel key={`category-products-${id}`} categoryId={id} categoryTitle={title} />
+          <li key={`category-products-${id}`}>
+            <ProductsCarousel categoryId={id} categoryTitle={title} />
+          </li>
         ))}
       </ProductsContainer>
     </PageContainer>
   );
 };
 
-const ProductsContainer = styled.div`
+const ProductsContainer = styled.ul`
   width: 75vw;
   margin: 0 auto;
   max-width: 1000px;
