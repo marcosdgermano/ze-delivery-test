@@ -4,15 +4,21 @@ import withPoc from '../../services/poc';
 import AddressField from './components/address-field';
 import Loading from '../../components/loading';
 
-const Home = ({ getPoc, loading, error }) => (
-  <Page>
-    <FieldContainer>
-      <AddressField onSubmit={getPoc} />
-      {loading && <Loading />}
-      {error && <span>error</span>}
-    </FieldContainer>
-  </Page>
-);
+const Home = ({ getPoc, loading, error, pocId, history }) => {
+  if (pocId) {
+    history.push('/produtos', { pocId });
+  }
+
+  return (
+    <Page>
+      <FieldContainer>
+        <AddressField onSubmit={getPoc} />
+        {loading && <Loading />}
+        {error && <span>error</span>}
+      </FieldContainer>
+    </Page>
+  );
+};
 
 const FieldContainer = styled.div`
   padding-top: 300px;
