@@ -4,7 +4,7 @@ import withPoc from '../../services/poc';
 import AddressField from './components/address-field';
 import Loading from '../../components/loading';
 
-export const Home = ({ getPoc, loading, error, pocId, history }) => {
+export const Home = ({ getPoc, loading, error, pocId, history, noResult }) => {
   if (pocId) {
     history.push('/produtos', { pocId });
   }
@@ -14,7 +14,8 @@ export const Home = ({ getPoc, loading, error, pocId, history }) => {
       <FieldContainer>
         <AddressField onSubmit={getPoc} />
         {loading && <Loading />}
-        {error && <span>error</span>}
+        {error && <span>Ocorreu um erro, tente novamente mais tarde!</span>}
+        {noResult && <span>Nenhum distribuidor para este endereço</span>}
       </FieldContainer>
     </Page>
   );

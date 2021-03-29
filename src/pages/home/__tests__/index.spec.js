@@ -12,7 +12,13 @@ describe('<Home />', () => {
   it('Render error', () => {
     const wrapper = mount(<Home error={{ message: 'Error' }} />);
 
-    expect(wrapper.find('span').text()).toEqual('error');
+    expect(wrapper.find('span').text()).toEqual('Ocorreu um erro, tente novamente mais tarde!');
+  });
+
+  it('Render no result', () => {
+    const wrapper = mount(<Home noResult={true} />);
+
+    expect(wrapper.find('span').text()).toEqual('Nenhum distribuidor para este endereço');
   });
 
   it('Render loading', () => {
