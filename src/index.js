@@ -19,6 +19,7 @@ const Page = styled.div`
 const hasPocId = history => {
   if (history.location.state?.pocId) {
     setCookie('pocId', history.location.state?.pocId);
+    history.replace();
     return true;
   }
 
