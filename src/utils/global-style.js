@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
   li {
     display: block;
   }
+
+  ul {
+    padding: 0;
+  }
 `;
 
 export default GlobalStyle;
