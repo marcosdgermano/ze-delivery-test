@@ -6,7 +6,7 @@ describe('<ProductCard />', () => {
   const props = {
     name: 'Brahma',
     image: 'mock/testurl.jpg',
-    price: '5.49',
+    price: 5.49,
   };
 
   it('Render component', () => {

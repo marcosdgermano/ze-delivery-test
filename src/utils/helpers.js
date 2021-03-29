@@ -1,5 +1,5 @@
 const formatNumber = number => {
-  if (!number) {
+  if (!number || typeof number !== 'number') {
     return null;
   }
 
